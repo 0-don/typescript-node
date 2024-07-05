@@ -1,0 +1,19 @@
+{
+  "name": "typescript-node",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node ./dist/main.js",
+    "dev": "nodemon --ignore './**/*.json' --exec node --no-warnings --loader ts-node/esm src/main.ts",
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "16.4.5",
+    "nodemon": "^3.1.4",
+    "@types/node": "^20.14.9",
+    "typescript": "^5.5.3",
+    "ts-node": "^10.9.2"
+  }
+}
