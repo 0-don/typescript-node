@@ -7,8 +7,8 @@
     "start": "node ./dist/main.js",
     "dev": "nodemon --exec node --no-warnings --loader ts-node/esm src/main.ts",
     "build": "tsc",
-    "prisma": "npx prisma migrate dev --name init && npx prisma generate",
-    "postinstall": "npx prisma generate"
+    "prisma": "prisma migrate dev --name init && prisma generate",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "node --loader ts-node/esm prisma/seed.ts"
