@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node ./dist/main.js",
+    "start": "prisma migrate deploy && prisma db seed && node ./dist/main.js",
     "dev": "nodemon --exec node --no-warnings --loader ts-node/esm src/main.ts",
     "build": "tsc",
     "prisma": "prisma migrate dev --name init && prisma generate",
@@ -14,14 +14,15 @@
     "seed": "node --loader ts-node/esm prisma/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "^5.16.1"
+    "@prisma/client": "^6.1.0"
   },
   "devDependencies": {
-    "dotenv": "16.4.5",
-    "nodemon": "^3.1.4",
-    "@types/node": "^20.14.9",
-    "typescript": "^5.5.3",
+    "@types/node": "^22.10.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "16.4.7",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.1.0",
     "ts-node": "^10.9.2",
-    "prisma": "^5.16.1"
+    "typescript": "^5.7.2"
   }
 }
